@@ -7,8 +7,8 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { ButtonModule } from 'primeng/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-// import { NgxMicRecorderService } from 'ngx-mic-recorder';
-
+import { NgxMicRecorderService } from 'ngx-mic-recorder';
+import { NgxMicRecorderModule } from 'ngx-mic-recorder';
 
 @NgModule({
   declarations: [],
@@ -21,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     ButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // NgxMicRecorderService
+    NgxMicRecorderModule
   ],
   exports:[
     InputTextModule,
@@ -30,7 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
     ButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // NgxMicRecorderService
-  ]
+    NgxMicRecorderModule
+
+  ],
+  providers:[NgxMicRecorderService]
 })
 export class SharedModule { }

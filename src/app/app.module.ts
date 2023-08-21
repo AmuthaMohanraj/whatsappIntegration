@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { SendMessageComponent } from './send-message/send-message.component';
 import { ApiServiceService } from './api-service.service';
 import { SharedModule } from './shared/shared.module';
-import { NgxMicRecorderService } from 'ngx-mic-recorder';
+
 
 
 
@@ -17,8 +17,7 @@ import { NgxMicRecorderService } from 'ngx-mic-recorder';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
-    NgxMicRecorderService
+    SharedModule
   ],
   providers: [ApiServiceService],
   bootstrap: [AppComponent]

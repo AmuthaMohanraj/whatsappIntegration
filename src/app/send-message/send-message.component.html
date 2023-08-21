@@ -30,11 +30,6 @@
 <div class="form-container">
   <!-- Other form controls -->
   
-  <!-- <ngx-mic-recorder #micRecorder (onRecordingComplete)="onRecordingComplete($event)"></ngx-mic-recorder> -->
-  
-  <div *ngIf="recording">
-    <p>Recording Time: {{ recordingTime | date: 'mm:ss' }}</p>
-    <button (click)="stopRecording()">Stop Recording</button>
-  </div>
-  <button (click)="startRecording()" [disabled]="recording">Start Recording</button>
-</div>
+  <ngx-mic-recorder #micRecorder (afterStartRecording)="startRecording()" (onRecordingComplete)="onRecordingComplete($event)"></ngx-mic-recorder>
+<p *ngIf="recording">Recording in progress...</p>
+

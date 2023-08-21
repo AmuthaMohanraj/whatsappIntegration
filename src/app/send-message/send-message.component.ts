@@ -64,24 +64,22 @@ export class SendMessageComponent {
 
 
   startRecording() {
-    this.micRecorder.start();
-    this.recordingStartTime = Date.now();
     this.recording = true;
-
-    // Reset recording time
-    this.recordingTime = 0;
+    this.recordingStartTime = Date.now();
     this.updateRecordingTime();
   }
 
   stopRecording() {
-    this.micRecorder.stop();
     this.recording = false;
+    // Handle stopping recording if needed
   }
 
   updateRecordingTime() {
-    if (this.recording && this.recordingStartTime !== null) { // Add a null check
+    if (this.recording && this.recordingStartTime !== null) {
       const currentTime = Date.now();
-      this.recordingTime = Math.floor((currentTime - this.recordingStartTime) / 1000);
+      this.recordingTime = Math.floor(
+        (currentTime - this.recordingStartTime) / 1000
+      );
       if (this.recordingTime <= this.maxRecordingTime) {
         setTimeout(() => {
           this.updateRecordingTime();
@@ -92,12 +90,10 @@ export class SendMessageComponent {
     }
   }
 
-  onRecordingComplete(event: RecordingEvents) {
-    console.log(event,'record-events');
-    
-    // this.audioBlob = event.srcElement;
+  onRecordingComplete(event:any) {
+    console.log(event, 'record-events');
+    this.audioBlob = event.srcElement;
     // this.whatsAppForm.get('audio')?.setValue(this.audioBlob);
-    // You can do something with the recorded audio blob here
   }
 
 }
