@@ -1,0 +1,99 @@
+/* send-message.component.scss */
+
+// 1. Color Scheme
+$whatsapp-green: #25D366;
+$whatsapp-gray: #ECE5DD;
+$whatsapp-blue: #34B7F1;
+
+.form-container {
+  // 2. Background and Border
+  background-color: $whatsapp-gray;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  // 3. Typography
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: $whatsapp-green;
+}
+
+.form-container label {
+  // 3. Typography
+  font-weight: bold;
+  margin-top: 10px;
+  color: #555;
+}
+
+.form-container input,
+.form-container textarea {
+  // 4. Forms
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.form-container div {
+  margin-top: 20px;
+}
+
+.form-container p-fileUpload {
+  margin-top: 10px;
+}
+
+.form-container button {
+  // 5. Buttons
+  margin-top: 20px;
+  background-color: $whatsapp-green;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+// 6. Visual Feedback
+.form-container input:focus,
+.form-container textarea:focus {
+  border-color: $whatsapp-green;
+}
+
+// 7. Whitespace and 8. Responsive Design
+.form-container {
+  // Adjust spacing and add media queries for responsive design
+  margin: 0 auto; // Center the form horizontally
+  max-width: 600px; // Set a maximum width for the form
+}
+
+// 9. Consistency
+.form-container label, .form-container button {
+  // Maintain consistent typography, padding, etc.
+  font-family: Arial, sans-serif; // Example font-family
+  padding: 5px; // Example padding
+}
+
+// 10. Icons and Imagery
+.message-bubble {
+  // Define styling for the message bubbles
+  background-color: $whatsapp-green;
+  color: white;
+  border-radius: 15px;
+  padding: 10px 15px;
+  margin: 10px;
+  max-width: 70%;
+  &.received-bubble {
+    background-color: $whatsapp-blue;
+  }
+}

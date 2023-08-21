@@ -1,0 +1,40 @@
+<!-- send-message.component.html -->
+
+<h2>Send WhatsApp Message</h2>
+
+<form [formGroup]="whatsAppForm" class="form-container" (ngSubmit)="onSubmit()">
+  <label for="phoneNumber">Phone Number</label>
+  <input type="text" pInputText id="phoneNumber" formControlName="phoneNumber">
+  <label for="textMessage">Text Message</label>
+  <textarea id="textMessage" pInputTextarea formControlName="textMessage"></textarea>
+
+  <!-- Media File Inputs -->
+  <div formGroupName="mediaFiles">
+    <label for="audio">Audio</label>
+    <p-fileUpload id="audio" (onSelect)="onFileChange($event, 'audio')" accept="audio/*"></p-fileUpload>
+
+    <label for="photo">Photo</label>
+    <p-fileUpload id="photo" (onSelect)="onFileChange($event, 'photo')" accept="image/*"></p-fileUpload>
+
+    <label for="video">Video</label>
+    <p-fileUpload id="video" (onSelect)="onFileChange($event, 'video')" accept="video/*"></p-fileUpload>
+  </div>
+
+  <button type="submit" pButton [disabled]="whatsAppForm.invalid">Send Message</button>
+</form>
+
+<!-- send-message.component.html -->
+
+<h2>Send WhatsApp Message</h2>
+
+<div class="form-container">
+  <!-- Other form controls -->
+  
+  <!-- <ngx-mic-recorder #micRecorder (onRecordingComplete)="onRecordingComplete($event)"></ngx-mic-recorder> -->
+  
+  <div *ngIf="recording">
+    <p>Recording Time: {{ recordingTime | date: 'mm:ss' }}</p>
+    <button (click)="stopRecording()">Stop Recording</button>
+  </div>
+  <button (click)="startRecording()" [disabled]="recording">Start Recording</button>
+</div>
